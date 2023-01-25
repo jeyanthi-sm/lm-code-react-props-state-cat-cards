@@ -4,6 +4,8 @@ import Header from './components/header';
 import Footer from './components/footer';
 import { useState } from 'react';
 import  Cat  from './data/cat';
+import CatCard from './components/cat_card';
+
 
 
 function App(): JSX.Element {
@@ -93,7 +95,11 @@ console.log("our pretties are ",cats);
 			<Header />
 
 			<main>
-				<div className='cards__wrapper'>{/* JSX code can go here */}</div>
+				<div className='cards__wrapper'>
+
+<CatCard />
+
+</div>
 			</main>
 
 			<Footer />
