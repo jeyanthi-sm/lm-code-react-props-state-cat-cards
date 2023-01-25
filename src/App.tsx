@@ -87,8 +87,8 @@ function App(): JSX.Element {
 		}
 	]
 	);
-console.log("our pretties are ",cats);
 	
+console.log("our pretties are ",cats);
 	return (
 		<>
 			<Navbar />
@@ -97,7 +97,7 @@ console.log("our pretties are ",cats);
 			<main>
 				<div className='cards__wrapper'>
 
-<CatCard />
+{cats.map((element) => <CatCard catObject={element}/>)}
 
 </div>
 			</main>
