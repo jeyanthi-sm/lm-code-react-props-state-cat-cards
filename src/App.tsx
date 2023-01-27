@@ -97,7 +97,7 @@ console.log("our pretties are ",cats);
 			<main>
 				<div className='cards__wrapper'>
 
-{cats.map((element) => <CatCard catObject={element}/>)}
+{cats.map((element,index) => <CatCard catObject={element} catIndex={index}/>)}
 
 </div>
 			</main>
