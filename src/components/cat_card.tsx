@@ -126,7 +126,10 @@ const CatCard : React.FC<CatCardProps> = (props) =>
 <p className="card__text">Species: {props.catObject.species}</p>
 <p className="card__text">Favourite Food(s): {props.catObject.favFoods}</p>
 <p className="card__text">Birth Year: {props.catObject.birthYear}</p>
+{props.catIndex < images.length && (
 <CatImage source={images[props.catIndex].image} alt={images[props.catIndex].altText} licenceType={images[props.catIndex].licenceType} licenceUrl={images[props.catIndex].licenceUrl} attributionName={images[props.catIndex].attributionName} attributionUrl={images[props.catIndex].attributionUrl} />
+)
+}
 </div>;
 export default CatCard;
 

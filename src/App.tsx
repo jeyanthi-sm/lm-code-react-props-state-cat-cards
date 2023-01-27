@@ -84,15 +84,24 @@ function App(): JSX.Element {
 			species: 'Tiny Cat',
 			favFoods: ['milk'],
 			birthYear: 2021,
+		},
+		{
+			name: "Captain Catface",
+			species: "Sea Cattain",
+			favFoods: ["fish, rum"],
+			birthYear: 2016,
 		}
+
 	]
 	);
+	const [catCount, setCatCount] = useState<number>(cats.length);
 	
 console.log("our pretties are ",cats);
+console.log("cat count is ",catCount);
 	return (
 		<>
 			<Navbar />
-			<Header />
+			<Header catCount={catCount} />
 
 			<main>
 				<div className='cards__wrapper'>
