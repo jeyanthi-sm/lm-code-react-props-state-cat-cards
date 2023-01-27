@@ -112,37 +112,29 @@ const images = [
 		attributionUrl: 'https://www.flickr.com/people/x-oph/'
 	}
 ];
-const CatCard : React.FC<CatCardProps> = (props) =>
-  /*
-  <div className="card">
-            <h3 className="card__text card__header">{props.name}</h3>
-            <p className="card__text">Species: {props.species}</p>
-            <p className="card__text">Favourite Food(s): {props.favFoods}</p>
-            <p className="card__text">Birth Year: {props.birthYear}</p>
-        </div>;
-*/
+//const CatCard : React.FC<CatCardProps> = (inputCardProps:CatCardProps) => {
+const CatCard:React.FC<CatCardProps>  = (inputCardProps:CatCardProps) => {
+const {name, species,favFoods,birthYear, catIndex} = inputCardProps;
+return (
 <div className="card">
-<h3 className="card__text card__header">{props.catObject.name}</h3>
-<p className="card__text">Species: {props.catObject.species}</p>
-<p className="card__text">Favourite Food(s): {props.catObject.favFoods}</p>
-<p className="card__text">Birth Year: {props.catObject.birthYear}</p>
-{props.catIndex < images.length && (
-<CatImage source={images[props.catIndex].image} alt={images[props.catIndex].altText} licenceType={images[props.catIndex].licenceType} licenceUrl={images[props.catIndex].licenceUrl} attributionName={images[props.catIndex].attributionName} attributionUrl={images[props.catIndex].attributionUrl} />
+<h3 className="card__text card__header">{name}</h3>
+<p className="card__text">Species: {species}</p>
+<p className="card__text">Favourite Food(s): {favFoods}</p>
+<p className="card__text">Birth Year: {birthYear}</p>
+{catIndex < images.length && (
+<CatImage source={images[catIndex].image} alt={images[catIndex].altText} licenceType={images[catIndex].licenceType} licenceUrl={images[catIndex].licenceUrl} attributionName={images[catIndex].attributionName} attributionUrl={images[catIndex].attributionUrl} />
 )
 }
-</div>;
+</div>
+)
+} 
 export default CatCard;
 
-//image: cat12,
-interface CatCardProps {
-    catObject:Cat;
-	catIndex:number;
-} 
-/*
+
 interface CatCardProps {
     name: string;
     species: string;
     favFoods: Array<string>;
     birthYear: number;
+	catIndex:number;
 } 
-*/
